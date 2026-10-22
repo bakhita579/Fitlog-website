@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitlog-Workout Tracker</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#log">Skip to content </a>
+    <header class="Site-header">
+        <h1>Fitlog</h1>
+        <p>Every run, rep and stretch in one place</p>
+    </header>
+    <main>
+        <section class="stats" aria-label="Training summary">
+            <div class="stats-grid">
+                <div class="stats"
+                <p class="stats-label">Workouts</p>
+                <p class="stats-value" id="stats-total">0</p>
+            </div>
+            <div class="stats">
+                <p class="stats-label">Last 7 days</p>
+                <p class="stats-value" id="stats-week">0</p>
+            </div>
+            <div class="stats">
+                <p class="stats-label">Time Trained</p>
+                <p class="stats-value" id="stats-time">0m</p>
+            </div>
+            <div class="stats">
+                <p class="stats-label">Most logged</p>
+                <p class="stats-value" id="stats-top">-</p>
+            </div>
+        </div>
+        </section>
+        <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+        <div class="layout">
+            <section id="log" class="panel" aria aria-labelledby="Form-title">
+                <h2 id="Form-title">Log a workout</h2>
+                <form id="Workout form" novalidate>
+                    <div class="field">
+                        <label for="Exercise">Exercise</label>
+                        <input id="Exercise" name="Exercise" type="text" maxlength="50" required aria-describedby="error-exercise">
+                        <p class="Error" id="Error-exercise"></p>
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            <label for="Type">Type</label>
+                            <select id="Type" name="Type" required aria-describedby="error-type">
+                                <option value="choose..."></option>
+                                <option>Strength</option>
+                                <option>Cardio</option>
+                                <option>Flexibilty</option>
+                                <option>Others</option>
+                            </select>
+                            <p class="error" id="error-type"></p>
+                            
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    
+</body>
+</html>
