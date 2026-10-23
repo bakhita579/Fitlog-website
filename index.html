@@ -7,36 +7,36 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"
+     <link rel="stylesheet" href="style.css">
     <script type="module" src="js/main.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#log">Skip to content </a>
-    <header class="Site-header">
+      <header class="site-header">
         <h1>Fitlog</h1>
         <p>Every run, rep and stretch in one place</p>
     </header>
     <main>
-        <section class="stats" aria-label="Training summary">
-            <div class="stats-grid">
-                <div class="stats"
-                <p class="stats-label">Workouts</p>
-                <p class="stats-value" id="stats-total">0</p>
-            </div>
-            <div class="stats">
-                <p class="stats-label">Last 7 days</p>
-                <p class="stats-value" id="stats-week">0</p>
-            </div>
-            <div class="stats">
-                <p class="stats-label">Time Trained</p>
-                <p class="stats-value" id="stats-time">0m</p>
-            </div>
-            <div class="stats">
-                <p class="stats-label">Most logged</p>
-                <p class="stats-value" id="stats-top">-</p>
-            </div>
-        </div>
-        </section>
+       <section class="stats" aria-label="Training summary">
+  <div class="stats-grid">
+    <div class="stat">
+      <p class="stat-label">Workouts</p>
+      <p class="stat-value" id="stat-total">0</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Last 7 days</p>
+      <p class="stat-value" id="stat-week">0</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Time trained</p>
+      <p class="stat-value" id="stat-time">0 Min</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Most logged</p>
+      <p class="stat-value" id="stat-top">—</p>
+    </div>
+  </div>
+</section>
         <p id="message" class="message" role="status" aria-live="polite" hidden></p>
         <div class="layout">
             <section id="log" class="panel" aria aria-labelledby="Form-title">
@@ -57,14 +57,80 @@
                                 <option>Flexibilty</option>
                                 <option>Others</option>
                             </select>
-                            <p class="error" id="error-type"></p>
-                            
+                            <p class="error" id="error-type"></p>               
                         </div>
-                    </div>
+                        <div class="field">
+                            <label for="Date">Date</label>
+                            <input id="Date" name="Date" type="date" required aria-describedby="error-date">
+                            <p class="error" id="error-date"></p>
+                        </div>
+                        <div class="row">
+                            <div class="field">
+                                <label for="Duration">Duration</label>
+                                <input id="Duration" name="duration" type="number" min="1" max="600" required aria-describedby="error-duration">
+                                <p class="error" id="error-duration"></p>
+                            </div>
+                            <div class="field">
+                                <label for="Sets">Sets <span class="(optional)"></span></label>
+                                <input id="sets" name="sets" type="number" min="1" required aria-describedby="error-sets">
+                                <p class="error" id="error-sets"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="field">
+                                <label for="Reps">Reps <span class="(optonal)"></span></label>
+                                <input id="reps" name="reps" type="number" min="1" required aria-describedby="error-reps">
+                                <p class="error" id="error-reps"></p>
+                            </div>
+                            <div class="field">
+                                <label for="weight">Weight, kg <span class="(optional)"></span></label>
+                                <input id="weight" name="weight" type="number" min="0" step="0.5" aria-describedby="error-weight">
+                                <p class="error" id="error-reps"></p>
+                            </div>
+                        </div>
+                        <div class="field">
+  <label for="notes">Notes <span class="optional">(optional)</span></label>
+  <textarea id="notes" name="notes" rows="3" maxlength="200" aria-describedby="error-notes"></textarea>
+  <p class="error" id="error-notes"></p>
+  <label class="check"><input type="checkbox" name="favorite"> Save as favorite</label>
+</div>
+
+       
+       <div class="form-action">
+        <button id="submit-btn" type="submit" class="primary">Save workout </button>
+        <button id="cancel-btn" type="button" hidden>Cancel edit</button>
+       </div>
+                    
                 </form>
             </section>
+              <section class="panel" aria-labelledby="history-title">
+    <h2 id="history-title">History</h2>
+    <div class="toolbar">
+      <div class="field">
+        <label for="search">Search</label>
+        <input id="search" type="search" placeholder="Squat, run…">
+      </div>
+      <div class="field">
+        <label for="filter-type">Show</label>
+        <select id="filter-type">
+          <option value="">All types</option>
+          <option>Strength</option>
+          <option>Cardio</option>
+          <option>Flexibility</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+     <p id="loading" class="loading" hidden>Loading workouts…</p>
+    <p id="empty" class="empty" hidden>No workouts yet. Log your first one on the left.</p>
+    <ul id="workout-list" class="workout-list" aria-busy="false"></ul>
+  </section>
         </div>
     </main>
-    
+      <footer class="site-footer">
+    <p>FitLog – built with vanilla JavaScript and JSON Server.</p>
+  </footer>
+</body>
+</html>
 </body>
 </html>
