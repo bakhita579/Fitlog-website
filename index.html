@@ -42,64 +42,69 @@
             <section id="log" class="panel" aria aria-labelledby="Form-title">
                 <h2 id="Form-title">Log a workout</h2>
                 <form id="Workout form" novalidate>
-                    <div class="field">
-                        <label for="Exercise">Exercise</label>
-                        <input id="Exercise" name="Exercise" type="text" maxlength="50" required aria-describedby="error-exercise">
-                        <p class="Error" id="Error-exercise"></p>
-                    </div>
-                    <div class="row">
-                        <div class="field">
-                            <label for="Type">Type</label>
-                            <select id="Type" name="Type" required aria-describedby="error-type">
-                                <option value="choose..."></option>
-                                <option>Strength</option>
-                                <option>Cardio</option>
-                                <option>Flexibilty</option>
-                                <option>Others</option>
-                            </select>
-                            <p class="error" id="error-type"></p>               
-                        </div>
-                        <div class="field">
-                            <label for="Date">Date</label>
-                            <input id="Date" name="Date" type="date" required aria-describedby="error-date">
-                            <p class="error" id="error-date"></p>
-                        </div>
-                        <div class="row">
-                            <div class="field">
-                                <label for="Duration">Duration</label>
-                                <input id="Duration" name="duration" type="number" min="1" max="600" required aria-describedby="error-duration">
-                                <p class="error" id="error-duration"></p>
-                            </div>
-                            <div class="field">
-                                <label for="Sets">Sets <span class="(optional)"></span></label>
-                                <input id="sets" name="sets" type="number" min="1" required aria-describedby="error-sets">
-                                <p class="error" id="error-sets"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="field">
-                                <label for="Reps">Reps <span class="(optonal)"></span></label>
-                                <input id="reps" name="reps" type="number" min="1" required aria-describedby="error-reps">
-                                <p class="error" id="error-reps"></p>
-                            </div>
-                            <div class="field">
-                                <label for="weight">Weight, kg <span class="(optional)"></span></label>
-                                <input id="weight" name="weight" type="number" min="0" step="0.5" aria-describedby="error-weight">
-                                <p class="error" id="error-reps"></p>
-                            </div>
-                        </div>
-                        <div class="field">
-  <label for="notes">Notes <span class="optional">(optional)</span></label>
-  <textarea id="notes" name="notes" rows="3" maxlength="200" aria-describedby="error-notes"></textarea>
-  <p class="error" id="error-notes"></p>
-  <label class="check"><input type="checkbox" name="favorite"> Save as favorite</label>
-</div>
+                          <div class="field">
+        <label for="exercise">Exercise</label>
+        <input id="exercise" name="exercise" type="text" maxlength="50" required aria-describedby="error-exercise">
+        <p class="error" id="error-exercise"></p>
+      </div>
 
-       
-       <div class="form-action">
-        <button id="submit-btn" type="submit" class="primary">Save workout </button>
+      <div class="row">
+        <div class="field">
+          <label for="type">Type</label>
+          <select id="type" name="type" required aria-describedby="error-type">
+            <option value="">Choose…</option>
+            <option>Strength</option>
+            <option>Cardio</option>
+            <option>Flexibility</option>
+            <option>Other</option>
+          </select>
+          <p class="error" id="error-type"></p>
+        </div>
+        <div class="field">
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required aria-describedby="error-date">
+          <p class="error" id="error-date"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="duration">Minutes</label>
+          <input id="duration" name="duration" type="number" min="1" max="600" required aria-describedby="error-duration">
+          <p class="error" id="error-duration"></p>
+        </div>
+        <div class="field">
+          <label for="sets">Sets <span class="optional">(optional)</span></label>
+          <input id="sets" name="sets" type="number" min="1" aria-describedby="error-sets">
+          <p class="error" id="error-sets"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="reps">Reps <span class="optional">(optional)</span></label>
+          <input id="reps" name="reps" type="number" min="1" aria-describedby="error-reps">
+          <p class="error" id="error-reps"></p>
+        </div>
+        <div class="field">
+          <label for="weight">Weight, kg <span class="optional">(optional)</span></label>
+          <input id="weight" name="weight" type="number" min="0" step="0.5" aria-describedby="error-weight">
+          <p class="error" id="error-weight"></p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="notes">Notes <span class="optional">(optional)</span></label>
+        <textarea id="notes" name="notes" rows="4" maxlength="400" aria-describedby="error-notes"></textarea>
+        <p class="error" id="error-notes"></p>
+      </div>
+
+      <label class="check"><input type="checkbox" name="favorite"> Save as favorite</label>
+
+      <div class="form-actions">
+        <button id="submit-btn" type="submit" class="primary">Save workout</button>
         <button id="cancel-btn" type="button" hidden>Cancel edit</button>
-       </div>
+      </div>
                     
                 </form>
             </section>
@@ -128,7 +133,7 @@
         </div>
     </main>
       <footer class="site-footer">
-    <p>FitLog – built with vanilla JavaScript and JSON Server.</p>
+    <p>FitLog - built with  JavaScript and JSON </p>
   </footer>
 </body>
 </html>
