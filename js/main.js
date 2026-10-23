@@ -1,7 +1,7 @@
-import * as api from './api';
-import { validateWorkout } from './validation';
-import { summarize } from './stats';
-import * as ui from './ui';
+import * as api from './api.js';
+import { validateWorkout } from './validation.js';
+import { summarize } from './stats.js';
+import * as ui from './ui.js';
 
 let editingId = null;
 const filters = { type: '', q: '' };

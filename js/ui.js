@@ -1,25 +1,32 @@
-import { formatMinutes } from "./stats";
-const $ = (selector) => document.querySelector(selector)
-const FIELDS = ['exercise', 'type', 'date', 'duration', 'sets', 'reps', 'weight', 'notes']
+import { formatMinutes } from './stats.js';
+
+const $ = (selector) => document.querySelector(selector);
+const FIELDS = ['exercise', 'type', 'date', 'duration', 'sets', 'reps', 'weight', 'notes'];
+
 export function setLoading(isLoading) {
-    $('#loading').hidden = !isLoading;
-  $('#workout-list').setAttribute('aria-busy', String(isLoading))
-    
+  $('#loading').hidden = !isLoading;
+  $('#workout-list').setAttribute('aria-busy', String(isLoading));
 }
+
+let messageTimer;
+
 export function showMessage(text, kind = 'info') {
-    const box = $ ('#message')
-   box.textContent = text
-  box.dataset.kind = kind
-  box.hidden = !text
-   
+  const box = $('#message');
+  box.textContent = text;
+  box.dataset.kind = kind;
+  box.hidden = !text;
+  clearTimeout(messageTimer);
+  if (text && kind === 'success') {
+    messageTimer = setTimeout(() => { box.hidden = true; }, 4000);
+  }
 }
 export function renderStats(summary) {
-    $ ('#stat-total').textContent = summary.totalWorkouts
-    $ ('stat-week').textContent = summary.weekWorkouts
-    $ ('stat-time').textContent = formatMinutes (summary.totalMinutes)
-    $ ('stat-top').textContent = summary.topType
-    
+  $('#stat-total').textContent = summary.totalWorkouts;
+  $('#stat-week').textContent = summary.weekWorkouts;
+  $('#stat-time').textContent = formatMinutes(summary.totalMinutes);
+  $('#stat-top').textContent = summary.topType;
 }
+
 function el(tag, { className, text, attrs = {} } = {}) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -27,6 +34,7 @@ function el(tag, { className, text, attrs = {} } = {}) {
   Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
   return node;
 }
+
 function actionButton(label, ariaLabel, onClick, className) {
   const btn = el('button', {
     text: label,
@@ -36,6 +44,7 @@ function actionButton(label, ariaLabel, onClick, className) {
   btn.addEventListener('click', onClick);
   return btn;
 }
+
 export function renderWorkouts(workouts, { onEdit, onDelete, onFavorite }) {
   const list = $('#workout-list');
   list.replaceChildren();
@@ -43,6 +52,7 @@ export function renderWorkouts(workouts, { onEdit, onDelete, onFavorite }) {
 
   workouts.forEach((w) => {
     const item = el('li', { className: 'workout', attrs: { 'data-type': w.type } });
+
     const main = el('div', { className: 'workout__main' });
     main.append(
       el('h3', { text: w.exercise }),
@@ -71,6 +81,7 @@ export function renderWorkouts(workouts, { onEdit, onDelete, onFavorite }) {
     list.append(item);
   });
 }
+
 export function readForm() {
   const form = $('#workout-form');
   const data = Object.fromEntries(new FormData(form));
@@ -83,6 +94,7 @@ export function fillForm(workout) {
   FIELDS.forEach((name) => { form.elements[name].value = workout[name] ?? ''; });
   form.elements.favorite.checked = Boolean(workout.favorite);
 }
+
 export function resetForm() {
   $('#workout-form').reset();
   $('#form-title').textContent = 'Log a workout';
@@ -97,6 +109,7 @@ export function enterEditMode() {
   $('#cancel-btn').hidden = false;
   $('#form-title').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
 export function showFieldErrors(errors) {
   const form = $('#workout-form');
   FIELDS.forEach((name) => {
