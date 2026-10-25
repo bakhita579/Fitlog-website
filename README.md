@@ -11,7 +11,7 @@ FitLog is a workout tracker. You log your sessions (strength, cardio, flexibilit
 - Responsive interface for desktop and mobile
 
 # live demo link
-
+ https://bakhita579.github.io/Fitlog-website/
 # figma wireframe
 https://www.figma.com/design/Mm5tTXj7ZUPCF764Zkcofb/Fitlog-wireframe?node-id=0-1&p=f&t=mY40pcy45TY807XA-0
 # github repo 
