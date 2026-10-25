@@ -10,6 +10,12 @@ FitLog is a workout tracker. You log your sessions (strength, cardio, flexibilit
 - Manage personal fitness goals
 - Responsive interface for desktop and mobile
 
+# live demo link
+
+# figma wireframe
+https://www.figma.com/design/Mm5tTXj7ZUPCF764Zkcofb/Fitlog-wireframe?node-id=0-1&p=f&t=mY40pcy45TY807XA-0
+# github repo 
+https://github.com/bakhita579/Fitlog-website
 # Installation
 
 ```bash
@@ -24,21 +30,11 @@ npm run dev
 
 Open the local address printed by the development server in your browser.
 
-### Production Build
-
-```bash
-npm run build
-npm run preview
-```
-
 ## Scripts
 
 Common project commands include:
 
-```bash
-npm run dev       
-npm run build     
-npm run preview   
+```bash        
 npm test         
 ```
 
@@ -46,10 +42,10 @@ npm test
 
 ```
 Fitlog-website/
-├── public/        # Static assets
-├── src/           # Application source code
-├── README.md      # Project documentation
-└── package.json   # Project metadata and scripts
+├── public/        
+├── src/           
+├── README.md      
+└── package.json   
 ```
 
 ## Contributing
