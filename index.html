@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitlog</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="gym.jpg">
+  <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <header class="site-header">
+ <header class="top-bar">
+  <img class="logo" src="gym.jpg" alt="FitLog logo">
+  <p class="tagline">Track every workout.</p>
+</header>
+</header>        
+    <main>
+       <section class="stats" aria-label="Training summary">
+  <div class="stats-grid">
+    <div class="stat">
+      <p class="stat-label">Workouts</p>
+      <p class="stat-value" id="stat-total">0</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Last 7 days</p>
+      <p class="stat-value" id="stat-week">0</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Time trained</p>
+      <p class="stat-value" id="stat-time">0 Min</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Most logged</p>
+      <p class="stat-value" id="stat-top">—</p>
+    </div>
+  </div>
+</section>
+        <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+        <div class="layout">
+            <section id="log" class="panel"  aria-labelledby="Form-title">
+                <h2 id="form-title">Log a workout</h2>
+                <form id="workout-form" novalidate>
+                          <div class="field">
+        <label for="exercise">Exercise</label>
+        <input id="exercise" name="exercise" type="text" maxlength="50" required aria-describedby="error-exercise">
+        <p class="error" id="error-exercise"></p>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="type">Type</label>
+          <select id="type" name="type" required aria-describedby="error-type">
+            <option value="">Choose…</option>
+            <option>Strength</option>
+            <option>Cardio</option>
+            <option>Flexibility</option>
+            <option>Other</option>
+          </select>
+          <p class="error" id="error-type"></p>
+        </div>
+        <div class="field">
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required aria-describedby="error-date">
+          <p class="error" id="error-date"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="duration">Minutes</label>
+          <input id="duration" name="duration" type="number" min="1" max="600" required aria-describedby="error-duration">
+          <p class="error" id="error-duration"></p>
+        </div>
+        <div class="field">
+          <label for="sets">Sets <span class="optional">(optional)</span></label>
+          <input id="sets" name="sets" type="number" min="1" aria-describedby="error-sets">
+          <p class="error" id="error-sets"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="reps">Reps <span class="optional">(optional)</span></label>
+          <input id="reps" name="reps" type="number" min="1" aria-describedby="error-reps">
+          <p class="error" id="error-reps"></p>
+        </div>
+        <div class="field">
+          <label for="weight">Weight, kg <span class="optional">(optional)</span></label>
+          <input id="weight" name="weight" type="number" min="0" step="0.5" aria-describedby="error-weight">
+          <p class="error" id="error-weight"></p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="notes">Notes <span class="optional">(optional)</span></label>
+        <textarea id="notes" name="notes" rows="4" maxlength="400" aria-describedby="error-notes"></textarea>
+        <p class="error" id="error-notes"></p>
+      </div>
+
+      <label class="check"><input type="checkbox" name="favorite"> Save as favorite</label>
+
+      <div class="form-actions">
+        <button id="submit-btn" type="submit" class="primary">Save workout</button>
+        <button id="cancel-btn" type="button" hidden>Cancel edit</button>
+      </div>
+                    
+                </form>
+            </section>
+              <section class="panel" aria-labelledby="history-title">
+    <h2 id="history-title">History</h2>
+    <div class="toolbar">
+      <div class="field">
+        <label for="search">Search</label>
+        <input id="search" type="search" placeholder="Squat, run…">
+      </div>
+      <div class="field">
+        <label for="filter-type">Show</label>
+        <select id="filter-type">
+          <option value="">All types</option>
+          <option>Strength</option>
+          <option>Cardio</option>
+          <option>Flexibility</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+     <p id="loading" class="loading" hidden>Loading workouts…</p>
+    <p id="empty" class="empty" hidden>No workouts yet. Log your first one on the left.</p>
+    <ul id="workout-list" class="workout-list" aria-busy="false"></ul>
+  </section>
+        </div>
+    </main>
+      <footer class="site-footer">
+    <p>FitLog tracker </p>
+  </footer>
+</body>
+</html>

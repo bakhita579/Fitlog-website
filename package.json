@@ -1,0 +1,23 @@
+{
+  "name": "fitlog-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test",
+    "coverage": "node --test --experimental-test-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakhita579/Fitlog-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/bakhita579/Fitlog-website/issues"
+  },
+  "homepage": "https://github.com/bakhita579/Fitlog-website#readme"
+  
+}

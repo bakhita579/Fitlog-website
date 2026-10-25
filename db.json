@@ -1,0 +1,45 @@
+{
+  "workouts": [
+    {
+      "exercise": "run",
+      "type": "Cardio",
+      "date": "2026-10-16",
+      "duration": 56,
+      "sets": 5,
+      "reps": 5,
+      "weight": 1000,
+      "notes": "",
+      "favorite": false,
+      "id": 1
+    },
+    {
+      "exercise": "yoga",
+      "type": "Strength",
+      "date": "2026-10-22",
+      "duration": 50,
+      "sets": 5,
+      "reps": 5,
+      "weight": 30,
+      "notes": "",
+      "favorite": false,
+      "id": 3
+    },
+    {
+      "exercise": "barbel squats",
+      "type": "Strength",
+      "date": "2026-10-18",
+      "duration": 30,
+      "sets": 5,
+      "reps": null,
+      "weight": 60,
+      "notes": "",
+      "favorite": false,
+      "id": 4
+    }
+  ],
+  "liveServer.settings.ignoreFiles": [
+    "db.json",
+    ".vscode/**",
+    "node_modules/**"
+  ]
+}
