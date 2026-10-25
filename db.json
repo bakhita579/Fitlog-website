@@ -1,5 +1,30 @@
 {
-  "workouts": [],
+  "workouts": [
+    {
+      "exercise": "run",
+      "type": "Cardio",
+      "date": "2026-10-16",
+      "duration": 56,
+      "sets": 5,
+      "reps": 5,
+      "weight": 1000,
+      "notes": "",
+      "favorite": false,
+      "id": 1
+    },
+    {
+      "exercise": "yoga",
+      "type": "Other",
+      "date": "2026-10-23",
+      "duration": 30,
+      "sets": null,
+      "reps": null,
+      "weight": null,
+      "notes": "",
+      "favorite": false,
+      "id": 2
+    }
+  ],
   "liveServer.settings.ignoreFiles": [
     "db.json",
     ".vscode/**",

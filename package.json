@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test",
+    "coverage": "node --test --experimental-test-coverage"
   },
   "repository": {
     "type": "git",
@@ -18,4 +19,5 @@
     "url": "https://github.com/bakhita579/Fitlog-website/issues"
   },
   "homepage": "https://github.com/bakhita579/Fitlog-website#readme"
+  
 }
