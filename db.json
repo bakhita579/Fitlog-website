@@ -23,6 +23,18 @@
       "notes": "",
       "favorite": false,
       "id": 3
+    },
+    {
+      "exercise": "barbel squats",
+      "type": "Strength",
+      "date": "2026-10-18",
+      "duration": 30,
+      "sets": 5,
+      "reps": null,
+      "weight": 60,
+      "notes": "",
+      "favorite": false,
+      "id": 4
     }
   ],
   "liveServer.settings.ignoreFiles": [
