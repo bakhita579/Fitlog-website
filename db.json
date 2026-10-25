@@ -14,15 +14,15 @@
     },
     {
       "exercise": "yoga",
-      "type": "Other",
-      "date": "2026-10-23",
-      "duration": 30,
-      "sets": null,
-      "reps": null,
-      "weight": null,
+      "type": "Strength",
+      "date": "2026-10-22",
+      "duration": 50,
+      "sets": 5,
+      "reps": 5,
+      "weight": 30,
       "notes": "",
       "favorite": false,
-      "id": 2
+      "id": 3
     }
   ],
   "liveServer.settings.ignoreFiles": [
